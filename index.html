@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./style.css">
     <title>Projects</title>
 </head>
 <body>
+    <input type="checkbox" id="toggle-menu">
     <nav>
         <h1>Projects</h1>
-        <div><h4>More</h4></div>
+        <div><label  class="material-icons" for="toggle-menu">menu</label></div>
     </nav>
-    <section>
+    <section class="main">
         <div class="pokedex"><a href="">Pokedex</a></div>
         <!-- <a href="https://overdrivef.github.io/tic-tac-toe">Tic Tac Toe</a> -->
         <div class="tic-tac-toe"><a href="https://overdrivef.github.io/tic-tac-toe/">Tic Tac Toe</a></div>
+    </section>
+    <section class="collapse">
+        <div class="close-icon">
+            <label class="material-icons" for="toggle-menu">close</label>
+        </div>
+        <div class="menu">
+            <a href="https://www.linkedin.com/in/fedealvaper">Linkedin</a><a href="https://github.com/overdriveF">Github</a>
+        </div>
+        
     </section>
 </body>
 </html>

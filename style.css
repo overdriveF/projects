@@ -1,12 +1,30 @@
 body{
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: blanchedalmond;
+    background-color: beige;
     color: white;
+}
+
+label:hover{
+    cursor: pointer;
+}
+
+a{
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+}
+
+label.material-icons{
+    font-size: 2em;
 }
 
 nav{
     background-color: #404040;
+    /* font-size: 1em; */
     font-size: clamp(0.8rem, 2.5vw, 1rem);
     padding: 1em 4em;
     display: flex;
@@ -14,8 +32,56 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
+nav > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-section{
+.collapse{
+    position: absolute;
+    top: 0;
+    display: none;
+    background-color: rgba(20, 20, 20, 0.9);
+}
+
+#toggle-menu{
+    display: none;
+}
+
+#toggle-menu:checked + nav label{
+    display: none;
+}
+
+#toggle-menu:checked ~ .collapse{
+    /* padding: 3em; */
+    top: 0;
+    display: grid;
+    grid-template-rows: 1fr 11fr;
+    width: 100%;
+    height: 100vh;
+}
+
+.close-icon{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 2.2em;
+    padding-right: 4em;
+}
+
+.menu{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a{
+    margin-bottom: 0.5em;
+}
+
+.main{
     padding: 2em 5em;
     display: grid;
     grid-auto-rows: clamp(10rem, 30vw, 15rem);
@@ -23,11 +89,17 @@ section{
     grid-gap: 1rem;
 }
 
-section > div{
+.main a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.main > div{
     /* width: 500px;
     height: 20vh; */
-
-    
     box-shadow: 0px 0px 0px #404040;
     position: relative;
     top: 0;
@@ -40,24 +112,10 @@ section > div{
 
 .tic-tac-toe{
     background-color: blueviolet;
-    background: linear-gradient(19deg, dodgerblue 50% , forestgreen 50%);
+    background: linear-gradient(180deg, dodgerblue 50% , forestgreen 50%);
 }
 
-a{
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-}
-
-a:visited{
-    color: white;
-}
-
-section > div:hover{
+.main > div:hover{
     box-shadow: 3px 3px 5px lightslategray;
     top: 5px;
     /* color: #181818; */
@@ -69,7 +127,14 @@ section > div:hover{
     nav{
         padding: 0.5rem 1.5rem;
     }
-    section{
+    .main{
         padding: 1rem 2rem;
+    }
+    #toggle-menu:checked ~ .collapse{
+        grid-template-rows: 1.4fr 9.9fr;
+    }
+    .close-icon{
+        padding-top: 1.3em;
+        padding-right: 1.5em;
     }
 }

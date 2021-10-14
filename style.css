@@ -131,7 +131,8 @@ nav > div{
         padding: 1rem 2rem;
     }
     #toggle-menu:checked ~ .collapse{
-        grid-template-rows: 1.4fr 9.9fr;
+        /* grid-template-rows: 1.4fr 9.9fr; */
+        grid-template-rows: 2fr 10fr;
     }
     .close-icon{
         padding-top: 1.3em;

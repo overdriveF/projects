@@ -1,26 +1,29 @@
 body{
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: beige;
+    background-color: cornsilk;
     color: white;
-}
-
-label:hover{
-    cursor: pointer;
 }
 
 a{
     color: white;
-    font-size: 2rem;
     text-decoration: none;
 }
 
-a:visited{
-    color: white;
-}
+/* a:visited{
+    color: none;
+} */
 
 label.material-icons{
-    font-size: 2em;
+    color: darkgray;
+    font-size: clamp(1.7rem, 2.5vw, 2rem);
+    transition: all 0.3s;
+}
+
+
+label.material-icons:hover{
+    color: white;
+    cursor: pointer;
 }
 
 nav{
@@ -40,10 +43,27 @@ nav > div{
 }
 
 .collapse{
-    position: absolute;
+    position: fixed;
     top: 0;
-    display: none;
-    background-color: rgba(20, 20, 20, 0.9);
+    right: 0;
+    height: 100%;
+    width: 0;
+    z-index: 1;
+    overflow-x: hidden; 
+    /* display: none; */
+    background-color: rgba(20, 20, 20, 0.95);
+    transition: all 0.3s;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.collapse a, .collapse label{
+    color: darkgrey;
+    transition: all 0.3s;
+}
+
+.collapse a:hover, .collapse label:hover{
+    color: white;
 }
 
 #toggle-menu{
@@ -56,11 +76,11 @@ nav > div{
 
 #toggle-menu:checked ~ .collapse{
     /* padding: 3em; */
-    top: 0;
-    display: flex;
+
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
+    align-items: center; */
+    width: 100vw;
     height: 100vh;
 }
 
@@ -73,17 +93,39 @@ nav > div{
 }
 
 .menu{
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    float: right;
+    height: 100%;
+    width: 250px;
+    background-color: #404040;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    /* display: grid;
+    grid-gap: 0.2em;
+    grid-auto-rows: 2em; */
+    /* display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center; */
 }
 
 .menu a{
-    margin-bottom: 0.5em;
+    /* font-size: 1.5rem; */
+    padding-top: 0.25em;
+    padding-left: 1em;
+}
+
+.menu div{
+    padding-top: 1em;
+    padding-right: 1em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .main{
+    font-size: 1.5rem;
     padding: 2em 5em;
     display: grid;
     grid-auto-rows: clamp(10rem, 30vw, 15rem);
@@ -140,4 +182,13 @@ nav > div{
         padding-top: 1.3em;
         padding-right: 1.5em;
     }
+    .menu{
+        width: 160px; 
+    }
 }
+
+/* @media screen and (min-width: 320px) and (max-width: 425px){
+    .menu{
+        width: 190px; 
+    }
+} */
